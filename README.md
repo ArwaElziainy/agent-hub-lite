@@ -36,16 +36,20 @@ It is a Custom / Companion UI use case.
 - Built the first simple Agent Hub Lite screen
 - Added static dashboard cards: Active Agents, Open Tasks, Completed
 
+### Build with me #4 - Render a simple tasks list (Mock Data)
+- Created app/data/tasks.ts with mock tasks
+- Rendered a dynamic task list using map
+- Replaced static cards with data-driven UI
+
 ## Current Status
 
 - UI foundation is ready
-- Still using static content
+- Tasks list is rendered from mock data
 - No SAP/CAP integration yet
 - No authentication yet
 
 ## Next Steps
 
-- #4 Render a simple tasks list with mock data
 - #5 Task details page
 - Later: BFF layer, CAP integration, and secure patterns
 
