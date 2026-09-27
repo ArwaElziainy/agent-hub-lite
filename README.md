@@ -41,16 +41,21 @@ It is a Custom / Companion UI use case.
 - Rendered a dynamic task list using map
 - Replaced static cards with data-driven UI
 
+### Build with me #5 - Task Details page + navigation
+- Created dynamic route app/tasks/[id]/page.tsx
+- Added navigation from list to details using Link
+- Displayed task details from mock data
+
 ## Current Status
 
 - UI foundation is ready
-- Tasks list is rendered from mock data
+- Tasks list and details pages are working with mock data
 - No SAP/CAP integration yet
 - No authentication yet
 
 ## Next Steps
 
-- #5 Task details page
+- #6 Organize project structure
 - Later: BFF layer, CAP integration, and secure patterns
 
 ## Repository

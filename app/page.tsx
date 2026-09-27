@@ -1,4 +1,5 @@
 import { tasks } from "./data/tasks";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -10,9 +11,10 @@ export default function Home() {
         <p className="mt-2 text-gray-600"> Simple task list using mock data </p>
         <div className="mt-8 space-y-4">
           {tasks.map((task) => (
-            <div
+            <Link
               key={task.id}
-              className="rounded-xl border bg-white p-5 shadow-sm">
+              href={`/tasks/${task.id}`}
+              className=" block rounded-xl border bg-white p-5 shadow-sm hover:bg-gray-50">
               <h2 className="text-lg font-semibold text-gray-900">
                 {task.title}
               </h2>
@@ -22,7 +24,7 @@ export default function Home() {
               <p className="mt-1 text-sm font-medium text-blue-600">
                 Status: {task.status}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
