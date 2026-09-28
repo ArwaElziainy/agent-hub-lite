@@ -1,4 +1,5 @@
 import { tasks } from "@/app/data/tasks";
+import PageHeader from "@/app/components/PageHeader";
 import Link from "next/link";
 
 type TaskDetailsProps = {
@@ -27,9 +28,10 @@ export default async function TaskDetailsPage({params}: TaskDetailsProps){
                 <Link href="/" className="text-sm text-blue-600">
                 ← Back to tasks
                 </Link>
-                <h1 className="mt-4 text-3xl font-bold text-gray-900">
+                <PageHeader title={task.title} subtitle={`Agent: ${task.agent}`} />
+                {/* <h1 className="mt-4 text-3xl font-bold text-gray-900">
                     {task.title}
-                </h1>
+                </h1> */}
                 <p className=" mt-4 text-gray-700">
                     <span className=" font-semibold" >Agent: </span> {task.agent}
                 </p>

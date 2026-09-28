@@ -46,16 +46,24 @@ It is a Custom / Companion UI use case.
 - Added navigation from list to details using Link
 - Displayed task details from mock data
 
+### Build with me #6 - Organize project structure
+- Created app/components folder
+- Extracted PageHeader component
+- Extracted TaskCard component
+- Cleaned the home page
+
 ## Current Status
 
 - UI foundation is ready
 - Tasks list and details pages are working with mock data
+- Components are organized
 - No SAP/CAP integration yet
 - No authentication yet
 
+
 ## Next Steps
 
-- #6 Organize project structure
+- #7: create the first API route (BFF start) and move mock data behind it
 - Later: BFF layer, CAP integration, and secure patterns
 
 ## Repository
