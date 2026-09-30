@@ -1,4 +1,11 @@
-export const tasks = [
+export type Task = {
+  id:number;
+  title:string;
+  agent:string;
+  status: "Open" | "In Progress" | "Completed";
+};
+
+export const tasks: Task[] = [
   {
     id: 1,
     title: "Review purchase requests",
@@ -18,3 +25,7 @@ export const tasks = [
     agent: "Approval Agent",
   },
 ];
+
+export function getTaskById(id:number): Task | undefined {
+  return tasks.find((task) => task.id === id);
+}
