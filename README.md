@@ -52,19 +52,37 @@ It is a Custom / Companion UI use case.
 - Extracted TaskCard component
 - Cleaned the home page
 
+### Build with me #7 - Clean code + first API route
+- Added shared Task type and getTaskById helper
+- Simplified TaskCard and pages
+- Created first API route at /api/tasks
+- Started the BFF approach
+
+### Build with me #8 - Connect Home + Details to API
+- Connected Home page to GET /api/tasks
+- Created GET /api/tasks/[id]
+- Connected Task Details page to API
+- Completed full read flow through BFF
+
 ## Current Status
 
 - UI foundation is ready
-- Tasks list and details pages are working with mock data
 - Components are organized
+- Mock data model is cleaned
+- API routes:
+  - GET /api/tasks
+  - GET /api/tasks/[id]
+- Home page loads from /api/tasks
+- Details page loads from /api/tasks/[id]
 - No SAP/CAP integration yet
 - No authentication yet
 
 
 ## Next Steps
 
-- #7: create the first API route (BFF start) and move mock data behind it
-- Later: BFF layer, CAP integration, and secure patterns
+- #9 Add loading and error states
+- Later: CAP integration
+- Later: Authentication and secure BFF patterns
 
 ## Repository
 
