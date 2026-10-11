@@ -1,4 +1,3 @@
-// import { tasks } from "@/app/data/tasks";
 import PageHeader from "@/app/components/PageHeader";
 import { Task } from "@/app/data/tasks";
 import Link from "next/link";
@@ -18,11 +17,32 @@ async function getTask(id: string): Promise<Task | null> {
         throw new Error("Faild to fetch task");
     }
     return response.json();
+
+    // throw new Error("Failed to fetch task");
 }
 
 export default async function TaskDetailsPage({ params }: TaskDetailsProps) {
     const { id } = await params;
-    const task = await getTask(id);
+    let task : Task | null = null;
+    let errorMessage = "";
+
+    try{
+        task = await getTask(id);
+    } catch {
+        errorMessage = "Could not load task details. please try again.";
+    }
+
+    if(errorMessage){
+        return(
+            <main className="min-h-screen bg-gray-50 p-8">
+                <div className="mx-auto max-w-3xl">
+                    <PageHeader title="Somthing went wrong"/>
+                    <p className="mt-4 text-red-700">{errorMessage}</p>
+                    <Link href="/" className=" mt-4 inline-block text-blue-600">← Back to tasks</Link>
+                </div>
+            </main>
+        );
+    }
 
     if (!task) {
         return (

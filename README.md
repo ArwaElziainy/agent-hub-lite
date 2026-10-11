@@ -64,23 +64,24 @@ It is a Custom / Companion UI use case.
 - Connected Task Details page to API
 - Completed full read flow through BFF
 
+### Build with me #9 - Loading and error states
+- Added loading.tsx for Home and Details
+- Improved API error handling in pages
+- Separated not-found from general failures
+
 ## Current Status
 
 - UI foundation is ready
 - Components are organized
-- Mock data model is cleaned
-- API routes:
-  - GET /api/tasks
-  - GET /api/tasks/[id]
-- Home page loads from /api/tasks
-- Details page loads from /api/tasks/[id]
+- API read flow is complete for Home + Details
+- Loading and error states are added
 - No SAP/CAP integration yet
 - No authentication yet
 
 
 ## Next Steps
 
-- #9 Add loading and error states
+- #10 Prepare service layer before CAP integration
 - Later: CAP integration
 - Later: Authentication and secure BFF patterns
 
