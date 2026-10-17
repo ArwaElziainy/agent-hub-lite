@@ -1,25 +1,27 @@
 import PageHeader from "@/app/components/PageHeader";
 import { Task } from "@/app/data/tasks";
+import { fetchTaskById } from "@/app/services/tasksService";
 import Link from "next/link";
+
 
 type TaskDetailsProps = {
     params: Promise<{ id: string }>;
 };
 
-async function getTask(id: string): Promise<Task | null> {
-    const response = await fetch(`http://localhost:3000/api/tasks/${id}`, {
-        cache: "no-store"
-    });
-    if (response.status === 404) {
-        return null;
-    }
-    if (!response.ok) {
-        throw new Error("Faild to fetch task");
-    }
-    return response.json();
+// async function getTask(id: string): Promise<Task | null> {
+//     const response = await fetch(`http://localhost:3000/api/tasks/${id}`, {
+//         cache: "no-store"
+//     });
+//     if (response.status === 404) {
+//         return null;
+//     }
+//     if (!response.ok) {
+//         throw new Error("Faild to fetch task");
+//     }
+//     return response.json();
 
-    // throw new Error("Failed to fetch task");
-}
+//     // throw new Error("Failed to fetch task");
+// }
 
 export default async function TaskDetailsPage({ params }: TaskDetailsProps) {
     const { id } = await params;
@@ -27,7 +29,7 @@ export default async function TaskDetailsPage({ params }: TaskDetailsProps) {
     let errorMessage = "";
 
     try{
-        task = await getTask(id);
+        task = await fetchTaskById(id);
     } catch {
         errorMessage = "Could not load task details. please try again.";
     }

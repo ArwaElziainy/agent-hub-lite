@@ -69,21 +69,25 @@ It is a Custom / Companion UI use case.
 - Improved API error handling in pages
 - Separated not-found from general failures
 
+### Build with me #10 - Service layer cleanup
+- Created app/services/tasksService.ts
+- Moved fetch logic from pages to service functions
+- Prepared structure for future CAP integration
+
 ## Current Status
 
-- UI foundation is ready
-- Components are organized
-- API read flow is complete for Home + Details
-- Loading and error states are added
+- UI + API read flow complete
+- Loading and error states added
+- Service layer in place
 - No SAP/CAP integration yet
 - No authentication yet
 
 
 ## Next Steps
 
-- #10 Prepare service layer before CAP integration
-- Later: CAP integration
-- Later: Authentication and secure BFF patterns
+- #11 Create CAP project foundation
+- Later: connect BFF to CAP OData
+- Later: authentication patterns
 
 ## Repository
 

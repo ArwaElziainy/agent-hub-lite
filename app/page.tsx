@@ -1,20 +1,20 @@
 import PageHeader from "@/app/components/PageHeader";
 import TaskCard from "@/app/components/TaskCard";
 import type { Task } from "@/app/data/tasks";
+import { fetchTasks } from "@/app/services/tasksService";
 
-async function getTasks(): Promise<Task[]>{
-  const response  = await fetch("http://localhost:3000/api/tasks",{
-    cache: "no-store"
-  });
-  if(!response.ok){
-    throw new Error("Faild to fetch tasks");
-  }
 
-  return response.json();
+// async function getTasks(): Promise<Task[]>{
+//   const response  = await fetch("http://localhost:3000/api/tasks",{
+//     cache: "no-store"
+//   });
+//   if(!response.ok){
+//     throw new Error("Faild to fetch tasks");
+//   }
 
-  // throw new Error("Failed to fetch task");
+//   return response.json();
 
-}
+// }
 
 export default async function Home() {
 
@@ -22,7 +22,7 @@ export default async function Home() {
   let errorMessage = "";
 
   try{
-    tasks = await getTasks();
+    tasks = await fetchTasks();
   } catch{
     errorMessage = "Could not load tasks. Please try again.";
   }
@@ -44,7 +44,6 @@ export default async function Home() {
           ))}
           </section>
         )}
-
       </div>
     </main>
   );
